@@ -1,16 +1,12 @@
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
+/* universal */
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/* universal */
 
 html {
   overflow-y: scroll;
@@ -30,9 +26,10 @@ textarea {
 
 .center {
   text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
+}
+
+.center h1 {
+  margin-bottom: 10px;
 }
 
 /* typography */
@@ -54,60 +51,59 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: #999;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-
-/* header */
-
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
 }
 
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-      color: $grayDarker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+  border-top: 1px solid #eaeaea;
+  color: #999;
 }
-/* miscellaneous */
 
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
 .debug_dump {
   clear: both;
   float: left;
@@ -115,7 +111,6 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
-
 /* sidebar */
 
 aside {
@@ -157,7 +152,6 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
-
 #error_explanation {
   color: #f00;
   ul {
@@ -170,7 +164,6 @@ input {
   @extend .control-group;
   @extend .error;
 }
-
 /* Users index */
 
 .users {
@@ -183,5 +176,33 @@ input {
     &:last-child {
       border-bottom: 1px solid $grayLighter;
     }
+  }
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }
